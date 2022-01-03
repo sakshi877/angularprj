@@ -1,0 +1,69 @@
+<!-- <div class="imgdiv"> -->
+   <!-- <img src="../../assets/images/pexels-johannes-plenio-1103970.jpg" class="img1"> -->
+<div class="main_div">
+   
+  <mat-card>
+      <mat-toolbar color="primary">REGISTRATION FORM</mat-toolbar>
+  <form #SubmitForm="ngForm" (ngSubmit)="formSubmit(SubmitForm)">
+     <mat-form-field  class="example-fullwidth">
+            <mat-label>First Name</mat-label><br>
+            <input  matInput name="fname" fname required ngModel #fname = "ngModel" pattern="[a-zA-z]+$">
+            <span *ngIf="fname.invalid && fname.touched">This field is not valid</span>
+            <mat-icon matSuffix color="primary">person</mat-icon>
+            </mat-form-field>
+   
+         <mat-form-field  class="example-fullwidth">
+            <mat-label>Last Name</mat-label><br>
+       <input matInput name="lname" lname required ngModel #lname = "ngModel"  pattern="[a-zA-z]+$">
+       <span *ngIf="lname.invalid && lname.touched">This field is not valid</span>
+       
+            <mat-icon matSuffix color="accent">person</mat-icon>
+
+         </mat-form-field>
+         <br>
+         
+         <mat-form-field class="example-fullwidth">
+            <mat-label>Email</mat-label><br>
+            <input  matInput  name="email"email required ngModel #email = "ngModel">
+            <span *ngIf="email.invalid && email.touched">This field is not valid</span>
+       
+            <mat-icon matSuffix color="warn">email</mat-icon>
+            </mat-form-field>
+         
+         <br>
+         <mat-form-field  class="example-fullwidth">
+            <mat-label>Password</mat-label><br>
+            <input  matInput  name="password" password required ngModel #password = "ngModel" minlength="5">
+            <span *ngIf="password.invalid && password.touched">This field is not valid</span>
+       
+            <mat-icon matSuffix color="primary">password</mat-icon>
+      
+         </mat-form-field>
+         <br>
+         
+         <mat-label>GENDER</mat-label><br><br>
+         <mat-radio-group aria-label="Select an Option">
+            <mat-radio-button value="male">male</mat-radio-button>
+            <mat-radio-button value="female">female</mat-radio-button>
+
+         </mat-radio-group>
+         <br><br>
+         <button mat-raised-button color="primary" [disabled]="SubmitForm.invalid">REGISTER</button>
+         
+         
+         
+      </form>
+  
+</mat-card>
+<!-- </div> -->
+<p>{{name | uppercase}}</p>
+
+</div>
+
+
+
+
+
+
+
+
